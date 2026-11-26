@@ -58,7 +58,7 @@
       <div class="marca">Papo de Adicto<small>A verdade é essa.</small></div>
     </header>
 
-    <div class="rotulo">App grátis para o seu computador</div>
+    <div class="rotulo">App grátis para computador e Android</div>
     <h1>Um dia de cada vez,<br><span>com você.</span></h1>
     <p class="sub">Meditação nova todo dia, contador de dias limpos, registro de humor, autoavaliações e uma comunidade sem julgamento.</p>
 
@@ -73,11 +73,23 @@
       <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Windows.exe">Windows</a>
       <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Mac-Apple.dmg">Mac (chip Apple M1, M2, M3...)</a>
       <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Mac-Intel.dmg">Mac antigo (Intel)</a>
+      <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Android.apk">Celular Android</a>
     </div>
 
     <div id="celular" class="cartao escondido">
-      <h2>Está no celular?</h2>
-      <p>O app para celular está chegando. Por enquanto, abra esta página no seu computador para baixar.</p>
+      <h2>iPhone</h2>
+      <p>O app para iPhone está chegando. Por enquanto, abra esta página no computador ou num celular Android.</p>
+    </div>
+
+    <div id="passos-android" class="cartao escondido">
+      <h2>Como instalar no Android</h2>
+      <p>Leva menos de 1 minuto.</p>
+      <ol>
+        <li>Toque em <b>Baixar</b>. Se o celular perguntar, confirme o download.</li>
+        <li>Abra o arquivo baixado. Se aparecer <b>"Instalar apps desconhecidos"</b>, toque em <b>Configurações</b> e ative <b>Permitir desta fonte</b>.</li>
+        <li>Volte e toque em <b>Instalar</b>. Se o Play Protect avisar, toque em <b>Instalar mesmo assim</b>.</li>
+      </ol>
+      <div class="dica">O aviso aparece porque o app ainda não está na Play Store. Ele é oficial do Papo de Adicto e seguro.</div>
     </div>
 
     <div id="passos-windows" class="cartao">
@@ -127,8 +139,16 @@
       var base = 'https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/';
       var botao = document.getElementById('botao-principal');
       var texto = document.getElementById('texto-botao');
-      var celular = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
-      if (celular) {
+      if (/Android/i.test(ua)) {
+        botao.href = base + 'PapoDeAdicto-Android.apk';
+        texto.textContent = 'Baixar para Android';
+        document.querySelector('.gratis').textContent = 'Grátis · cerca de 55 MB';
+        document.getElementById('passos-android').classList.remove('escondido');
+        document.getElementById('passos-windows').classList.add('escondido');
+        return;
+      }
+      var iphone = /iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+      if (iphone) {
         document.getElementById('celular').classList.remove('escondido');
         botao.classList.add('escondido');
         document.querySelector('.gratis').classList.add('escondido');
