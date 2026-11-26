@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baixe o app Papo de Adicto</title>
+  <meta name="description" content="Baixe grátis o app Papo de Adicto para o seu computador: meditação do dia, dias limpos, autoavaliações e comunidade.">
+  <link rel="icon" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800;1,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --preto: #050706; --superficie: #101411; --superficie2: #161c17;
+      --verde: #20f05b; --verde2: #8bf032; --branco: #f4f4ef; --cinza: #a8afa9;
+      --linha: rgba(255,255,255,.12); --vermelho: #ff5a4e;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--preto); color: var(--branco); font-family: Inter, Arial, sans-serif; line-height: 1.6; }
+    .tela { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    header { display: flex; align-items: center; gap: 14px; }
+    header img { width: 64px; height: 64px; border-radius: 10px; }
+    .marca { font-family: 'Barlow Condensed', Impact, sans-serif; font-style: italic; font-weight: 900; font-size: 26px; text-transform: uppercase; line-height: 1; }
+    .marca small { display: block; font-family: Inter, sans-serif; font-style: normal; font-weight: 600; font-size: 13px; color: var(--verde); text-transform: none; margin-top: 4px; }
+    .rotulo { color: var(--verde); font-weight: 800; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin: 40px 0 8px; }
+    h1 { font-family: 'Barlow Condensed', Impact, sans-serif; font-style: italic; font-weight: 900; text-transform: uppercase; font-size: clamp(40px, 9vw, 72px); line-height: .95; margin: 0 0 16px; }
+    h1 span { color: var(--verde); }
+    p.sub { color: var(--cinza); font-size: 18px; margin: 0 0 28px; }
+    .botao { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 20px 24px; border-radius: 8px; background: var(--verde); color: var(--preto); font-weight: 800; font-size: 18px; text-transform: uppercase; letter-spacing: .5px; text-decoration: none; box-shadow: 0 0 24px rgba(32,240,91,.35); transition: transform .1s; }
+    .botao:active { transform: scale(.98); }
+    .botao svg { width: 26px; height: 26px; }
+    .escolha { text-align: center; color: var(--branco); font-weight: 600; margin-top: 24px; }
+    .outros { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .outros a { flex: 1 1 200px; text-align: center; padding: 16px 12px; border: 1.5px solid rgba(255,255,255,.28); border-radius: 8px; color: var(--branco); text-decoration: none; font-weight: 600; font-size: 14px; }
+    .gratis { text-align: center; color: var(--cinza); font-size: 13px; margin-top: 10px; }
+    .cartao { background: var(--superficie); border: 1px solid var(--linha); border-radius: 12px; padding: 24px; margin-top: 28px; }
+    .cartao h2 { font-family: 'Barlow Condensed', Impact, sans-serif; font-style: italic; font-weight: 800; text-transform: uppercase; font-size: 28px; margin: 0 0 6px; }
+    .cartao p { color: var(--cinza); margin: 0 0 12px; }
+    ol { margin: 0; padding: 0; list-style: none; counter-reset: passo; }
+    ol li { counter-increment: passo; position: relative; padding: 0 0 16px 48px; }
+    ol li::before { content: counter(passo); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--verde); color: var(--preto); font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    ol li b { color: var(--branco); }
+    .dica { background: #0f2617; border: 1px solid rgba(32,240,91,.3); border-radius: 8px; padding: 12px 14px; font-size: 14px; color: var(--branco); }
+    .recursos { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 28px; }
+    .recursos div { background: var(--superficie2); border: 1px solid var(--linha); border-radius: 10px; padding: 14px; font-size: 14px; }
+    .recursos b { display: block; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 19px; text-transform: uppercase; }
+    .ajuda { border-color: var(--vermelho); }
+    .ajuda h2 { color: var(--vermelho); }
+    footer { text-align: center; color: var(--cinza); font-size: 13px; margin-top: 40px; }
+    footer a { color: var(--verde); }
+    .escondido { display: none; }
+  </style>
+</head>
+<body>
+  <div class="tela">
+    <header>
+      <img src="logo.jpg" alt="Logo Papo de Adicto">
+      <div class="marca">Papo de Adicto<small>A verdade é essa.</small></div>
+    </header>
+
+    <div class="rotulo">App grátis para o seu computador</div>
+    <h1>Um dia de cada vez,<br><span>com você.</span></h1>
+    <p class="sub">Meditação nova todo dia, contador de dias limpos, registro de humor, autoavaliações e uma comunidade sem julgamento.</p>
+
+    <a id="botao-principal" class="botao" href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Windows.exe">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>
+      <span id="texto-botao">Baixar para Windows</span>
+    </a>
+    <div class="gratis">Grátis · cerca de 125 MB</div>
+
+    <div class="escolha">Ou escolha o seu computador:</div>
+    <div class="outros">
+      <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Windows.exe">🪟 Windows</a>
+      <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Mac-Apple.dmg"> Mac (chip Apple M1, M2, M3...)</a>
+      <a href="https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/PapoDeAdicto-Mac-Intel.dmg"> Mac antigo (Intel)</a>
+    </div>
+
+    <div id="celular" class="cartao escondido">
+      <h2>Está no celular?</h2>
+      <p>O app para celular está chegando. Por enquanto, abra esta página no seu computador para baixar.</p>
+    </div>
+
+    <div id="passos-windows" class="cartao">
+      <h2>Como instalar no Windows</h2>
+      <p>Leva menos de 1 minuto.</p>
+      <ol>
+        <li>Clique em <b>Baixar</b> e abra o arquivo que aparecer nos downloads.</li>
+        <li>Se aparecer uma tela azul dizendo <b>"O Windows protegeu o computador"</b>, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</li>
+        <li>Clique em <b>Avançar</b> até terminar. O ícone do Papo de Adicto aparece na sua Área de Trabalho.</li>
+      </ol>
+      <div class="dica">Esse aviso aparece porque o app é novo. Ele é oficial do Papo de Adicto e seguro.</div>
+    </div>
+
+    <div id="passos-mac" class="cartao escondido">
+      <h2>Como instalar no Mac</h2>
+      <p>Leva menos de 1 minuto.</p>
+      <ol>
+        <li>Clique em <b>Baixar</b> e abra o arquivo que aparecer nos downloads.</li>
+        <li>Na janela que abrir, <b>arraste o ícone do Papo de Adicto para a pasta Aplicativos</b>.</li>
+        <li>Abra o app pela pasta Aplicativos (ou pelo Launchpad).</li>
+        <li>Se o Mac disser que <b>não pode verificar o desenvolvedor</b>: abra <b>Ajustes do Sistema › Privacidade e Segurança</b>, desça até o fim e clique em <b>Abrir Mesmo Assim</b>.</li>
+      </ol>
+      <div class="dica">Não sabe qual é o seu Mac? Clique na maçã  no canto da tela › <b>Sobre Este Mac</b>. Se aparecer "Chip Apple M...", use o botão de chip Apple. Se aparecer "Intel", use o de Mac antigo.</div>
+    </div>
+
+    <div class="recursos">
+      <div><b>Meditação do dia</b>Um texto novo todo dia, para começar com calma.</div>
+      <div><b>Jornada</b>Contador de dias limpos e registro de humor.</div>
+      <div><b>Autoavaliação</b>Perguntas para refletir, sem julgamento.</div>
+      <div><b>Comunidade</b>Grupos para conversar com quem entende.</div>
+    </div>
+
+    <div class="cartao ajuda">
+      <h2>Precisa de ajuda agora?</h2>
+      <p>Ligue para o <b style="color:#f4f4ef">CVV: 188</b> (grátis, 24 horas) ou o <b style="color:#f4f4ef">SAMU: 192</b>.</p>
+    </div>
+
+    <footer>
+      <a href="https://www.papodeadicto.com.br">papodeadicto.com.br</a> · Instagram, TikTok e YouTube: @papodeadicto
+    </footer>
+  </div>
+
+  <script>
+    // Mostra o botão e o passo a passo certos para o computador da pessoa.
+    (function () {
+      var ua = navigator.userAgent || '';
+      var base = 'https://github.com/papodeadicto-hub/papo-de-adicto-downloads/releases/latest/download/';
+      var botao = document.getElementById('botao-principal');
+      var texto = document.getElementById('texto-botao');
+      var celular = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+      if (celular) {
+        document.getElementById('celular').classList.remove('escondido');
+        botao.classList.add('escondido');
+        document.querySelector('.gratis').classList.add('escondido');
+        return;
+      }
+      if (/Macintosh|Mac OS X/.test(ua)) {
+        botao.href = base + 'PapoDeAdicto-Mac-Apple.dmg';
+        texto.textContent = 'Baixar para Mac';
+        document.getElementById('passos-mac').classList.remove('escondido');
+        document.getElementById('passos-windows').classList.add('escondido');
+      }
+    })();
+  </script>
+</body>
+</html>
