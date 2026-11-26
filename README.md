@@ -9,7 +9,7 @@ Acesse a **[última versão](https://github.com/papodeadicto-hub/papo-de-adicto-
 | Computador | Arquivo |
 |---|---|
 | Mac com chip Apple (M1, M2, M3, M4...) | `Papo-de-Adicto-...-arm64.dmg` |
-| Mac com processador Intel | `Papo-de-Adicto-....dmg` (sem "arm64") |
+| Mac com processador Intel | `Papo-de-Adicto-...-x64.dmg` |
 | Windows 10 ou 11 | `Papo-de-Adicto-Setup-....exe` |
 
 > Não sabe qual é o seu Mac? Clique no menu  › **Sobre Este Mac**. Se aparecer "Chip Apple M...", use o arquivo **arm64**.
